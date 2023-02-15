@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mensagens</title>
+    <style>
+        #botao1, #botao2, #botao3 {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Desafio das Mensagens</h1>
+    <button id="botao1" onclick="clicou1()">Clique aqui</button>
+    <button id="botao2" onclick="clicou2()">Clique aqui</button>
+    <button id="botao3" onclick="clicou3()">Clique aqui</button>
+    <script>
+        function clicou1() {
+            window.alert('Você clicou no 1º botão!')
+        }
+        function clicou2() {
+            alert('Você clicou no 2º botão!')
+        }
+        function clicou3() {
+            alert('Você clicou no 3º botão!')
+        }
+    </script>
 </body>
 </html>
