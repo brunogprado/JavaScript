@@ -20,6 +20,18 @@ section {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.445);
 }
 
+input, label {
+    cursor: pointer;
+}
+
+#txtano {
+    width: 178px;
+}
+
+#res {
+    text-align: center;
+}
+
 footer {
     color: white;
     text-align: center;
