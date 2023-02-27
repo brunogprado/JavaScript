@@ -1,0 +1,7 @@
+function contar()
+    var inicio = window.document.querySelector('inicio')
+    var fim = document.querySelector('fim')
+    var passo = document.getElementById('passo')
+    var res = document.querySelector('res')
+    for (i = inicio; p = passo; fim )
+        res.innerHTML = ('teste')
