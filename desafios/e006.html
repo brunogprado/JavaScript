@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando dois números</h1>
+    <button onclick="calcular()">Iniciar a soma</button>
+    <section id="res">
+        <p>O resultado vem aqui...</p>
+    </section>
+    <script>
+        function calcular() {
+            //Poderia ter colocado Number() já na crição da variável n1 e n2! Ou tbm criar var n3 convertendo.
+            let n1 = window.prompt('Digite um número:')
+            let n2 = prompt('Digite outro número:')
+            //var n3 = Number(n1) + Number(n2)
+            let res = document.getElementById('res')
+            res.innerHTML = `<p>A soma entre <mark>${n1}</mark> e <mark>${n2}</mark> é igual a <strong>${Number(n1) + Number(n2)}!`
+        }
+    </script>
+</body>
+</html>
