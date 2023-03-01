@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+    <style>
+        button {
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ -> US$</h1>
+    <button onclick="converter()">Converter</button>
+    <section id="res">
+        <p><mark>Clique no botão acima para converter.</mark></p>
+    </section>
+    <script>
+        var dolar = Number(prompt('Qual a cotação do dólar hoje?').replace(',','.'))
+        function converter() {
+            var grana = Number(prompt('Quanto R$ você tem na carteira?').replace(',','.'))
+            var res = document.querySelector('#res')
+            res.innerHTML = `<p><strong>${(dolar * grana).toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+        }
+    </script>
+</body>
+</html>
