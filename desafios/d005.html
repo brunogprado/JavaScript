@@ -16,30 +16,28 @@
     <h1>Conversor de medidas</h1>
     <button onclick="converter()">Converter</button>
     <div id="res">
-        <p>Clique no botão acima para iniciar.</p>
+        <p><strong><mark>Clique no botão acima para iniciar.</mark></strong></p>
     </div>
     <script>
         function converter() {
-            let m = Number(prompt('Digite uma distância em metros (m):'))
+            let n = Number(prompt('Digite uma distância em metros (m):').replace(',','.'))
+
             let res = document.querySelector('#res')
-            res.innerHTML = `<h1>A distância de ${m} metros, corresponde a...`
-            km = m / 1000
-            res.innerHTML += `<p>${km} quilômetros (km)</p>`
-            hm = m / 100
-            res.innerHTML += `<p>${hm} hectômetros (Hm)</p>`
-            dam = m /10
-            res.innerHTML += `<p>${dam} decâmetros (Dam)`
-            dm = m * 10
-            res.innerHTML += `<p>${dm} decímetros (dm)`
-            cm = m * 100
-            res.innerHTML += `<p>${cm} centímetros (cm)`
-            mm = m * 1000
-            res.innerHTML += `<p>${mm} milímetros (mm)`
+            res.innerHTML = `<h1>A distância de ${n.toLocaleString('pt-BR')} metros, corresponde a...`
+
+            km  = n / 1000
+            res.innerHTML += `<p>${km.toLocaleString('pt-BR')} quilômetros (km)</p>`
+            hm  = n / 100
+            res.innerHTML += `<p>${hm.toLocaleString('pt-BR')} hectômetros (Hm)</p>`
+            dam = n / 10
+            res.innerHTML += `<p>${dam.toLocaleString('pt-BR')} decâmetros (Dam)`
+            dm  = n * 10
+            res.innerHTML += `<p>${dm.toLocaleString('pt-BR')} decímetros (dm)`
+            cm  = n * 100
+            res.innerHTML += `<p>${cm.toLocaleString('pt-BR')} centímetros (cm)`
+            mm  = n * 1000
+            res.innerHTML += `<p>${mm.toLocaleString('pt-BR')} milímetros (mm)`
         }
-
-
-// VERIFICAR COMO EDITAR OS NÚMEROS, CASAS DECIMAIS :.2f dentro do placeholder ${} E replace . por , 
-
     </script>
 </body>
 </html>
