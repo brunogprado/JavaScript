@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        body {
+            font: 12pt arial;
+        }
+        button {
+            font-size: 12pt;
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="calcular()">Verificar</button>
+    <div id="res">
+        <p>Clique no botão acima para analisar a mudança de preço.</p>
+    </div>
+    <script>
+        function calcular() {
+            preçoanterior = Number(prompt('Qual era o preço anterior do produto?').replace(',','.'))//.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+            preçoatual = Number(prompt('Qual é o preço atual do produto?').replace(',','.'))//.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+            res = document.querySelector('#res')
+            res.innerHTML = '<h2>Analisando os valores informados...'
+            
+            if (preçoanterior < preçoatual) {
+                diferença = preçoatual - preçoanterior
+                variação = ((preçoatual / preçoanterior) - 1) * 100
+                res.innerHTML += `<p>O produto custava ${preçoanterior.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} e agora custa ${preçoatual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.`
+                res.innerHTML += `<p>Hoje o produto está mais caro.`
+                res.innerHTML += `<p>O preço subiu ${diferença.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao preço anterior.`
+                res.innerHTML += `Uma variação de ${variação.toFixed(2)}% pra cima.`
+            }
+            
+            else if (preçoanterior == preçoatual) {                
+                res.innerHTML += "<p>Não teve mudança!"
+            }
+            
+            else {
+                preçoanterior > preçoatual
+                diferença = preçoanterior - preçoatual
+                variação = ((preçoanterior / preçoatual) - 1) * 100
+                res.innerHTML += `<p>O produto custava ${preçoanterior.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} e agora custa ${preçoatual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+                res.innerHTML += '<p>Hoje o produto está mais barato.'
+                res.innerHTML += `<p>O preço caiu ${diferença.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao preço anterior.`
+                res.innerHTML += `Uma variação de ${variação.toFixed(2)}% pra cima.`
+            }
+        }
+    </script>
+</body>
+</html>
