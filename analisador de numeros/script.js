@@ -1,15 +1,67 @@
-function adicionar() {
-    let num = document.querySelector('#txtnum')
-    let tab = document.querySelector('#seltab')
-    if  (num.value.length == 0) {
-        alert ('Por favor, digite um número!')
+let num = document.querySelector('#fnum')
+let lista = document.querySelector('#flista')
+let res = document.querySelector('#res')
+let valores = [] //array, vetor, variável composta
+
+function isNumero(n) {
+    if (Number(n) >= 1 && Number (n) <= 100) {
+        return true
     } else {
-        let n = Number(num.value)
-        tab.innerHTML = ''
-        
+        return false
+    }
+}
+
+function inLista(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function adicionar() {
+    if  (isNumero(num.value) && !inLista(num.value, valores)) {
+        valores.push(Number(num.value))
         let item = document.createElement('option')
-        item.innerHTML += `Valor ${n} adicionado.`
-        tab.appendChild(item)
-        
+        item.text = `Valor ${num.value} adicionado.`
+        lista.appendChild(item)
+        res.innerHTML = ''
+    } else {
+        alert('Valor inválido ou já encontrado na lista.')
+    }
+    num.value = ''
+    num.focus()
+}
+
+function finalizar() {
+    if (valores.length == 0) {
+        alert('Adicione valores antes de finalizar!')
+    } else {
+        let tot = valores.length
+        /* 
+        let maior = valores[0]
+        let menor = valores[0]
+        let soma = 0
+        let media = 0
+        for (let pos in valores) {
+            soma += valores[pos]
+            if (valores[pos] > maior)
+            maior = valores[pos]
+            if (valores[pos] < menor)
+            menor = valores[pos]
+        }
+        media = soma / tot
+        */
+
+        /* 
+        array.sort()
+        menor = array[0]
+        maior = array[array.length-1]
+        */
+        let maior = Math.max.apply(null, valores)
+        let menor = Math.min.apply(null, valores)
+        res.innerHTML = `<p>Ao todo, temos ${tot} números cadastrados.`
+        res.innerHTML += `<p>O maior valor informado foi ${maior}.`
+        res.innerHTML += `<p>O menor valor informado foi ${menor}.`
     }
 }
