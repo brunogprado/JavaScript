@@ -4,15 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Fatorial</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1></h1>
-    <button onclick="">Início</button>
-    <div id="res">
-        <p>Clique acima para começar!</p>
-    </div>
+    <h1>Cálculo de Fatorial</h1>
+    <p>Escreva um número (entre 1 e 21) na caixa a seguir e te mostrarei o Fatorial dele.</p>
+    <section>
+        <form action="#" method="get">
+            <p>
+                <label for="fnum">Número:</label>
+                <input type="number" name="num" id="fnum" max="21" min="1">
+                <input type="submit" value="Fatorial" formaction="javascript:fatorial()">
+            </p>
+        </form>
+    </section>
+    <article id="saida"></article>
     <script src="script.js"></script>
 </body>
 </html>
